@@ -54,9 +54,8 @@ public class UsersController {
 		user.setCpf(userDto.getCpf());
 		user.setEmail(userDto.getEmail());
 		user.setSenha(userDto.getSenha());
-		
 		user.setGrupo(userDto.getGrupo());
-		user.setStatus(Boolean.getBoolean(userDto.getStatus()));
+		user.setStatus(Boolean.valueOf(userDto.getStatus()));
 		repo.save(user);
 		return "redirect:/usuario";
 	}
@@ -75,7 +74,7 @@ public class UsersController {
 			userDto.setEmail(user.getEmail());
 			userDto.setSenha(user.getSenha());
 			userDto.setGrupo(user.getGrupo());
-			user.setStatus(Boolean.getBoolean(userDto.getStatus()));
+			user.setStatus(Boolean.valueOf(userDto.getStatus()));
 			model.addAttribute("userDto",userDto);
 			
 		}
@@ -105,7 +104,7 @@ public class UsersController {
 			user.setEmail(userDto.getEmail());
 			user.setSenha(userDto.getSenha());
 			user.setGrupo(userDto.getGrupo());
-			user.setStatus(Boolean.getBoolean(userDto.getStatus()));
+			user.setStatus(Boolean.valueOf(userDto.getStatus()));
 			repo.save(user);
 		}
 		catch(Exception ex) {
